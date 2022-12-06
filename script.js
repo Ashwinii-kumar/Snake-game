@@ -113,10 +113,13 @@ function isGameover()
     if(gameOver)
     {
         highScore();
+        high.style.display="none";
         gameTune.play();
-        ctx.fillStyle="purple";
+        
+    
+    ctx.fillStyle="purple";
         ctx.font="50px Verdana";
-
+        
         ctx.fillText("Game Over",canvas.width/6.5,canvas.height/2);
         playBtn.style.display="block";
 
@@ -260,8 +263,13 @@ function highScore()
 // let text=document.createElement("h2");
 
 // text.textContent=highScore();
-high.innerHTML+=`: ${highScore()} `;
-high.style.color="purple";
+high.innerHTML+=` ${highScore()} `;
+high.style.color="white";
+high.style.position="absolute";
+high.style.top="90px";
+
+canvas.style.marginTop="40px";
+
 
 drawGame(); 
 
